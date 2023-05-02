@@ -5,8 +5,10 @@ using Nepen.Models;
 
 namespace Nepen.Dados
 {
+    // FilmeConfiguration sempre tem que herdar da IEntityTypeConfiguration pois é ela que mostra qual modelo será aplicado as configurações.
     public class FilmeConfiguration : IEntityTypeConfiguration<FilmeModel>
     {
+        // Método Configure, usado para configurar o modo como a Migration deve criar as tabelas no banco de dados.
         public void Configure(EntityTypeBuilder<FilmeModel> builder)
         {
             builder

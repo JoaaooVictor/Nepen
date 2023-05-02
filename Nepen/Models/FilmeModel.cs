@@ -1,5 +1,6 @@
 ﻿namespace Nepen.Models
 {
+    // Classe de modelagem de dados do filme.
     public class FilmeModel
     {
         public int Id { get; set; }
