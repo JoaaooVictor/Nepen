@@ -5,30 +5,39 @@
 
 @model IEnumerable<FilmeModel> 
 
-<h2>Listar Filmes</h2>
+<h2>Listagem de Filmes</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Título</th>
-            <th>Duração</th>
-            <th>Gênero</th>
-            <th>Classificação</th>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Duração</th>
+            <th scope="col">Classificação</th>
+            <th scope="col">Gênero</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var filme in Model)
-        {
-            <tr>
-                <td>@filme.Titulo</td>
-                <td>@filme.Duracao</td>
-                <td>@filme.Genero</td>
-                <td>@filme.Classificacao</td>
-                <td>
-                    <a href="@Url.Action("Atualizar", "Filmes", new { id = filme.Id })" class="btn btn-info">Editar</a>
-                    <a href="@Url.Action("Deletar", "Filmes", new { id = filme.Id })" class="btn btn-danger">Remover</a>
-                </td>
-            </tr>
-        }
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
     </tbody>
 </table>
