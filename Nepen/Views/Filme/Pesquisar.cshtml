@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Listar";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model IEnumerable<FilmeModel> 
+
+<h2>Listar Filmes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Duração</th>
+            <th>Gênero</th>
+            <th>Classificação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var filme in Model)
+        {
+            <tr>
+                <td>@filme.Titulo</td>
+                <td>@filme.Duracao</td>
+                <td>@filme.Genero</td>
+                <td>@filme.Classificacao</td>
+                <td>
+                    <a href="@Url.Action("Atualizar", "Filmes", new { id = filme.Id })" class="btn btn-info">Editar</a>
+                    <a href="@Url.Action("Deletar", "Filmes", new { id = filme.Id })" class="btn btn-danger">Remover</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
